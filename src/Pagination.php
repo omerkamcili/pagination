@@ -160,16 +160,16 @@ class Pagination
 
                 }
 
-                $pageNumber = intval(ceil($i));
-
-                $this->pages[$pageNumber] = $this->makeUrlWithParams(array_merge($params, $this->createTakeAndSkipParameters($pageNumber)));
+                $pageNumber               = intval(ceil($i));
+                $data                     = array_merge($params, $this->createTakeAndSkipParameters($pageNumber));
+                $this->pages[$pageNumber] = $this->makeUrlWithParams($data);
 
             }
 
         }
 
-        $this->pages[$this->currentPage] = $this->makeUrlWithParams(array_merge($params,
-            $this->createTakeAndSkipParameters($this->currentPage)));
+        $data                            = array_merge($params, $this->createTakeAndSkipParameters($this->currentPage));
+        $this->pages[$this->currentPage] = $this->makeUrlWithParams($data);
 
         if ($this->currentPage < $this->totalPages) {
 
@@ -188,6 +188,9 @@ class Pagination
             }
 
         }
+
+        ksort($this->pages);
+
 
         // TODO: Calculate nextPage, previousPage, firstPage and lastPage
     }
