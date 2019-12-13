@@ -1,0 +1,24 @@
+{
+  "name": "omerkamcili/pagination",
+  "description": "Calculate pages with take, skip and total parameters and then create pagination links",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Ömer Kamçılı",
+      "email": "omerkamcili@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "OmerKamcili\\Pagination\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "OmerKamcili\\Pagination\\Test\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^7.1.3"
+  }
+}
