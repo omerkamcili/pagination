@@ -175,7 +175,7 @@ class Pagination
 
             for ($i = ($this->currentPage + 1); $i < $this->currentPage + ($this->walkPageNumber + 1); $i++) {
 
-                if ($i == $this->totalPages) {
+                if ($i > $this->totalPages) {
 
                     break;
 
